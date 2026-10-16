@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>미국꿀템 · 오늘의 딜</title>
+<meta name="description" content="미국 한인을 위한 아마존 핫딜·꿀템. 가격 확인한 딜만 모았어요.">
+<style>
+  /* ============ 브랜드 색 ============ */
+  :root{
+    --navy:#14213D; --navy-2:#1E2F55; --honey:#FFC83D; --honey-d:#E8A800;
+    --cream:#FFF6E0; --ink:#14213D; --muted:#5B6478; --line:#E9E2CF; --card:#FFFFFF;
+    --bg:#FFF9EC; --hot:#E5484D;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#0F1830; --card:#18264A; --ink:#F4F1E8; --muted:#A9B2C8; --line:#2A3A63; --cream:#1E2F55; }
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;
+       background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:480px;margin:0 auto;padding:0 16px 40px}
+
+  /* ============ 헤더 ============ */
+  header{background:var(--navy);color:#fff;text-align:center;padding:28px 16px 22px;border-radius:0 0 24px 24px}
+  .logo{width:84px;height:84px;border-radius:50%;background:var(--navy-2);border:3px solid var(--honey);
+        display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 10px}
+  .logo small{font-size:9px;letter-spacing:2px;color:#fff;opacity:.9}
+  .logo b{font-size:26px;color:var(--honey);line-height:1.1}
+  header h1{font-size:20px;font-weight:800}
+  header p{font-size:13px;opacity:.85;margin-top:2px}
+  .ig{display:inline-block;margin-top:10px;font-size:13px;color:var(--honey);text-decoration:none;font-weight:700}
+
+  /* ============ 공지 / 필터 ============ */
+  .disclose{font-size:11.5px;color:var(--muted);background:var(--cream);border:1px solid var(--line);
+            border-radius:12px;padding:10px 12px;margin:16px 0 12px}
+  .chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-bottom:12px;scrollbar-width:none}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{flex:none;border:1.5px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-size:13px;
+        font-weight:700;padding:7px 14px;border-radius:999px;cursor:pointer}
+  .chip.on{background:var(--honey);border-color:var(--honey);color:var(--navy)}
+
+  /* ============ 카드 ============ */
+  .list{display:flex;flex-direction:column;gap:12px}
+  .card{display:flex;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:16px;
+        padding:14px;text-decoration:none;color:inherit;transition:transform .1s}
+  .card:active{transform:scale(.98)}
+  .emo{flex:none;width:56px;height:56px;border-radius:14px;background:var(--cream);display:flex;
+       align-items:center;justify-content:center;font-size:30px}
+  .body{flex:1;min-width:0}
+  .badges{display:flex;gap:6px;margin-bottom:4px;flex-wrap:wrap}
+  .badge{font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:6px;background:var(--cream);color:var(--muted)}
+  .badge.hot{background:var(--hot);color:#fff}
+  .badge.low{background:var(--honey);color:var(--navy)}
+  .name{font-size:15px;font-weight:800;line-height:1.3}
+  .note{font-size:12.5px;color:var(--muted);margin-top:3px}
+  .row{display:flex;align-items:baseline;gap:8px;margin-top:8px;flex-wrap:wrap}
+  .price{font-size:18px;font-weight:900}
+  .was{font-size:12.5px;color:var(--muted);text-decoration:line-through}
+  .asof{font-size:11px;color:var(--muted);margin-left:auto}
+  .go{display:block;margin-top:10px;text-align:center;background:var(--navy);color:#fff;font-weight:800;
+      font-size:13.5px;padding:9px;border-radius:10px}
+  @media (prefers-color-scheme: dark){ .go{background:var(--honey);color:var(--navy)} }
+  .empty{text-align:center;color:var(--muted);font-size:14px;padding:30px 0}
+  footer{text-align:center;font-size:11px;color:var(--muted);margin-top:28px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo"><small>MIGOOK</small><b>꿀템</b></div>
+  <h1>미국꿀템 · 오늘의 딜</h1>
+  <p>미국 한인을 위한 아마존 핫딜·꿀템 🇺🇸🇰🇷</p>
+  <a class="ig" href="https://instagram.com/migook.kkultem">@migook.kkultem 팔로우 →</a>
+</header>
+
+<main class="wrap">
+  <div class="disclose">
+    📢 이 페이지는 아마존 제휴 링크를 포함하고 있어요. 링크로 구매하시면 추가 비용 없이 소정의 수수료를 받습니다.
+    가격은 표시된 시점 기준이며 수시로 바뀔 수 있어요.<br>
+    As an Amazon Associate I earn from qualifying purchases.
+  </div>
+
+  <div class="chips" id="chips"></div>
+  <div class="list" id="list"></div>
+
+  <footer>
+    가격·재고는 아마존 사이트 기준으로 최종 확인해 주세요.<br>
+    © 미국꿀템
+  </footer>
+</main>
+
+<script>
+/* =========================================================
+   ✏️ 여기만 수정하세요
+   1) TAG 에 본인 Amazon Associates 트래킹 ID 입력
+   2) DEALS 에 딜 추가/삭제 — 위에 있을수록 페이지 상단에 표시
+      ends 날짜가 지나면 자동으로 숨겨져요 (YYYY-MM-DD, 비우면 계속 표시)
+   ========================================================= */
+const TAG = "migookkkultem-20";
+
+const DEALS = [
+  { asin:"B0BRYCXRPG", emoji:"💊", cat:"건강",
+    name:"Physician's CHOICE 유산균 60B CFU 84캡슐",
+    note:"하루 한 알 · 약 3개월분 · 최근 1년 최저가",
+    price:"$34.97", was:"$49.97", asof:"10/15 오전", badge:"핫딜", ends:"" },
+
+  { asin:"B0CLTLB2CK", emoji:"🍗", cat:"주방",
+    name:"Our Place Wonder Oven 6-in-1",
+    note:"에어프라이어+토스터 오븐 하나로 · 2~4인 가족",
+    price:"$185.00", was:"", asof:"10/3", badge:"꿀템", ends:"" },
+
+  { asin:"B085DVNHHK", emoji:"💧", cat:"생활",
+    name:"Owala FreeSip 32oz 텀블러",
+    note:"빨대로도, 그냥 마셔도 · 원터치 잠금 뚜껑",
+    price:"가격 확인", was:"", asof:"", badge:"꿀템", ends:"" },
+
+  { asin:"B0DQG2VHKJ", emoji:"🔪", cat:"주방",
+    name:"티타늄 양면 도마 16×11\"",
+    note:"고기용/채소용 따로 · 한식 손질 많은 집",
+    price:"$38.99", was:"", asof:"10/3", badge:"꿀템", ends:"" },
+
+  { asin:"B008H4SLV6", emoji:"🥤", cat:"주방",
+    name:"Vitamix 5200 블렌더 64oz",
+    note:"스무디·수프·이유식 · 세일 오면 스토리로 알려드려요",
+    price:"$479.99", was:"", asof:"10/3", badge:"세일 대기", ends:"" },
+];
+/* badge 예시: "핫딜" (빨강) · "최저가" (노랑) · 그 외 텍스트는 기본 회색 */
+/* ========================================================= */
+
+const CATS = ["전체", ...new Set(DEALS.map(d => d.cat))];
+let current = "전체";
+const today = new Date(); today.setHours(0,0,0,0);
+
+function live(d){ return !d.ends || new Date(d.ends + "T23:59:59") >= today; }
+function link(d){ return "https://www.amazon.com/dp/" + d.asin + "?tag=" + encodeURIComponent(TAG); }
+function esc(s){ return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+function badgeClass(b){ return b === "핫딜" ? "badge hot" : b === "최저가" ? "badge low" : "badge"; }
+
+function renderChips(){
+  document.getElementById("chips").innerHTML = CATS.map(c =>
+    `<button class="chip ${c===current?"on":""}" data-c="${esc(c)}">${esc(c)}</button>`).join("");
+  document.querySelectorAll(".chip").forEach(b => b.onclick = () => { current = b.dataset.c; renderChips(); renderList(); });
+}
+function renderList(){
+  const items = DEALS.filter(live).filter(d => current === "전체" || d.cat === current);
+  document.getElementById("list").innerHTML = items.length ? items.map(d => `
+    <a class="card" href="${link(d)}" target="_blank" rel="sponsored noopener">
+      <div class="emo">${esc(d.emoji)}</div>
+      <div class="body">
+        <div class="badges"><span class="${badgeClass(d.badge)}">${esc(d.badge)}</span><span class="badge">${esc(d.cat)}</span></div>
+        <div class="name">${esc(d.name)}</div>
+        <div class="note">${esc(d.note)}</div>
+        <div class="row">
+          <span class="price">${esc(d.price)}</span>
+          ${d.was ? `<span class="was">${esc(d.was)}</span>` : ""}
+          ${d.asof ? `<span class="asof">${esc(d.asof)} 기준</span>` : ""}
+        </div>
+        <span class="go">아마존에서 보기 →</span>
+      </div>
+    </a>`).join("") : `<div class="empty">지금은 진행 중인 딜이 없어요 🙏<br>인스타 스토리를 확인해 주세요!</div>`;
+}
+renderChips(); renderList();
+</script>
+</body>
+</html>

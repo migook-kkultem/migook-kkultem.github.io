@@ -1,0 +1,2 @@
+# One public JPEG URL per line. 1 line = single post, 2-10 lines = carousel.
+https://migook-kkultem.github.io/img/2026-10-15-probiotics.jpg

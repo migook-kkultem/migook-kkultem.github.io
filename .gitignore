@@ -1,0 +1,13 @@
+# secrets — never commit
+.env
+.env.*
+
+# local only
+.DS_Store
+published.json
+/*.png
+/*.jpg
+
+# misc
+__pycache__/
+_bundle.tgz
