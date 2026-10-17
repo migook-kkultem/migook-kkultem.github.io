@@ -1,0 +1,8 @@
+# Carousel: hook, 5 items, CTA (order matters)
+https://migook-kkultem.github.io/img/2026-10-16-deals-01.jpg
+https://migook-kkultem.github.io/img/2026-10-16-deals-02.jpg
+https://migook-kkultem.github.io/img/2026-10-16-deals-03.jpg
+https://migook-kkultem.github.io/img/2026-10-16-deals-04.jpg
+https://migook-kkultem.github.io/img/2026-10-16-deals-05.jpg
+https://migook-kkultem.github.io/img/2026-10-16-deals-06.jpg
+https://migook-kkultem.github.io/img/2026-10-16-deals-07.jpg

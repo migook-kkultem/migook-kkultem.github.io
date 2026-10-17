@@ -10,6 +10,9 @@ Usage (run from this folder in Terminal):
 A post folder contains:
   caption.txt      the full caption (must start with "#광고")
   image_urls.txt   1 public JPEG URL per line (1 line = single post, 2-10 lines = carousel)
+  -- or, for a Reel --
+  video_url.txt    1 public MP4 URL (H.264/AAC, 9:16, 3-90s)
+  cover_url.txt    (optional) 1 public JPEG URL used as the Reel cover
 
 Nothing is posted until you type "y" at the prompt.
 Only Python's standard library is used — no pip install needed.
@@ -75,14 +78,16 @@ def graph(method, path, token, params=None):
         sys.exit(f"✗ Network error: {e.reason}{hint}")
 
 
-def check_image_url(url):
-    """Instagram fetches the image itself: it must be public, https, and JPEG."""
+def check_image_url(url, want="image"):
+    """Instagram fetches the media itself: it must be public, https, and JPEG (image) or MP4 (video)."""
     req = urllib.request.Request(url, method="HEAD")
     try:
         with urllib.request.urlopen(req, timeout=20) as r:
             ctype = r.headers.get("Content-Type", "")
     except Exception as e:
         return f"not reachable ({e})"
+    if want == "video":
+        return None if "mp4" in ctype else f"is {ctype or 'unknown type'} — Reels need MP4"
     if "jpeg" not in ctype and "jpg" not in ctype:
         return f"is {ctype or 'unknown type'} — Instagram API only accepts JPEG"
     return None
@@ -91,14 +96,19 @@ def check_image_url(url):
 def read_post(folder):
     folder = os.path.join(HERE, folder) if not os.path.isabs(folder) else folder
     cap_path = os.path.join(folder, "caption.txt")
-    url_path = os.path.join(folder, "image_urls.txt")
+    vid_path = os.path.join(folder, "video_url.txt")
+    url_path = vid_path if os.path.exists(vid_path) else os.path.join(folder, "image_urls.txt")
     for p in (cap_path, url_path):
         if not os.path.exists(p):
             sys.exit(f"✗ Missing {p}")
     caption = open(cap_path, encoding="utf-8").read().strip()
-    urls = [l.strip() for l in open(url_path, encoding="utf-8")
-            if l.strip() and not l.strip().startswith("#")]
-    return folder, caption, urls
+    rd = lambda p: [l.strip() for l in open(p, encoding="utf-8") if l.strip() and not l.strip().startswith("#")]
+    urls = rd(url_path)
+    cover = None
+    if url_path == vid_path:
+        cp = os.path.join(folder, "cover_url.txt")
+        cover = (rd(cp) or [None])[0] if os.path.exists(cp) else None
+    return folder, caption, urls, (url_path == vid_path), cover
 
 
 def validate(caption, urls):
@@ -108,8 +118,8 @@ def validate(caption, urls):
     if len(caption) > 2200:
         problems.append(f"caption is {len(caption)} chars (max 2,200)")
     tags = [w for w in caption.split() if w.startswith("#")]
-    if len(tags) > 30:
-        problems.append(f"{len(tags)} hashtags (max 30)")
+    if len(tags) > 5:
+        problems.append(f"{len(tags)} hashtags (Instagram now allows max 5, incl. #광고)")
     if "__" in caption:
         problems.append('caption still has a "__" placeholder (unverified price/date?)')
     if not urls:
@@ -124,8 +134,8 @@ def validate(caption, urls):
     return problems
 
 
-def wait_ready(container_id, token, label):
-    for _ in range(30):  # up to ~60s
+def wait_ready(container_id, token, label, tries=30):
+    for _ in range(tries):  # 2s each
         st = graph("GET", container_id, token, {"fields": "status_code,status"})
         code = st.get("status_code")
         if code == "FINISHED":
@@ -133,7 +143,7 @@ def wait_ready(container_id, token, label):
         if code in ("ERROR", "EXPIRED"):
             sys.exit(f"✗ {label} failed to process: {st.get('status')}")
         time.sleep(2)
-    sys.exit(f"✗ {label} still processing after 60s — nothing was published. Try again.")
+    sys.exit(f"✗ {label} still processing after {tries*2}s — nothing was published. Try again.")
 
 
 # ---------- commands ----------
@@ -160,7 +170,7 @@ def cmd_check():
 def cmd_post(folder, dry_run=False, force=False):
     env = load_env()
     tok, ig = env["MIGOOK_IG_TOKEN"], env["MIGOOK_IG_USER_ID"]
-    folder, caption, urls = read_post(folder)
+    folder, caption, urls, is_reel, cover = read_post(folder)
 
     log_path = os.path.join(folder, "published.json")
     if os.path.exists(log_path) and not force:
@@ -169,21 +179,29 @@ def cmd_post(folder, dry_run=False, force=False):
     problems = validate(caption, urls)
     if not dry_run:
         for u in urls:
-            err = check_image_url(u)
+            err = check_image_url(u, "video" if is_reel else "image")
             if err:
-                problems.append(f"image {u} {err}")
+                problems.append(f"media {u} {err}")
+        if cover:
+            err = check_image_url(cover)
+            if err:
+                problems.append(f"cover {cover} {err}")
     if problems:
         print("✗ Fix these before posting:")
         for p in problems:
             print("   -", p)
         sys.exit(1)
 
-    kind = "single image" if len(urls) == 1 else f"carousel ({len(urls)} images)"
+    if is_reel and len(urls) != 1:
+        sys.exit("✗ video_url.txt must contain exactly 1 URL")
+    kind = "Reel (video)" if is_reel else ("single image" if len(urls) == 1 else f"carousel ({len(urls)} images)")
     print("=" * 60)
     print(f"Account : @migook.kkultem (IG {ig})")
     print(f"Type    : {kind}")
     for i, u in enumerate(urls, 1):
-        print(f"Image {i} : {u}")
+        print(f"{'Video' if is_reel else 'Image'} {i} : {u}")
+    if cover:
+        print(f"Cover   : {cover}")
     print(f"Caption : {len(caption)} chars")
     print("-" * 60)
     print(caption)
@@ -197,7 +215,14 @@ def cmd_post(folder, dry_run=False, force=False):
         print("Cancelled. Nothing was posted.")
         return
 
-    if len(urls) == 1:
+    if is_reel:
+        params = {"media_type": "REELS", "video_url": urls[0], "caption": caption, "share_to_feed": "true"}
+        if cover:
+            params["cover_url"] = cover
+        c = graph("POST", f"{ig}/media", tok, params)
+        creation_id = c["id"]
+        wait_ready(creation_id, tok, "Reel", tries=90)
+    elif len(urls) == 1:
         c = graph("POST", f"{ig}/media", tok, {"image_url": urls[0], "caption": caption})
         creation_id = c["id"]
         wait_ready(creation_id, tok, "Image")

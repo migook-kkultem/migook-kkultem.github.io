@@ -11,3 +11,6 @@ published.json
 # misc
 __pycache__/
 _bundle.tgz
+
+# scratch (AI downloads, renders)
+.work/
