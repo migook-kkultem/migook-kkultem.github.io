@@ -14,3 +14,6 @@ _bundle.tgz
 
 # scratch (AI downloads, renders)
 .work/
+
+# raw AI images (large; rendered slides live in docs/img)
+posts/*/ai/

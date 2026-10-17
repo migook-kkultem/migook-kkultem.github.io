@@ -11,3 +11,7 @@
 3. `python3 publish.py post posts/<folder> --dry-run`
 4. `python3 publish.py post posts/<folder>` → review → type `y`
 5. Post the Story with link sticker manually from the phone
+
+## Style rules
+- No "AI 연출" labels on images or in captions. Keep "#광고 아마존 제휴링크 포함" as the first caption line (required).
+- Reels with AI video: turn on Instagram's built-in "AI label" toggle when posting.

@@ -1,0 +1,79 @@
+{
+  "slug": "2026-10-17-bf-waitlist",
+  "kicker": "가격 이력 직접 확인",
+  "title_html": "블프 <em>대기</em> 리스트",
+  "sub": "지금 사도 되는 것 1 · 블프까지 기다릴 것 4",
+  "asof": "10/16 밤",
+  "hook_img": "ai/hook.png",
+  "items": [
+    {
+      "asin": "B0DZ7RZ14S",
+      "img": "ai/item1.png",
+      "short": "샤크\n플렉스스타일",
+      "name": "샤크 플렉스스타일 에어 스타일러",
+      "who": "드라이 · 컬 · 볼륨을 한 대로",
+      "price": "$199.99",
+      "was": "$267.56",
+      "was_label": "평균",
+      "off": 25,
+      "badge": "최저가",
+      "history": "최근 1년 최저가 = 지금 · 블프까지 안 기다려도 돼요"
+    },
+    {
+      "asin": "B01JRTZVVM",
+      "img": "ai/item2.png",
+      "short": "쿠쿠\n압력밥솥",
+      "name": "쿠쿠 고압 압력밥솥 6인용",
+      "who": "잡곡밥 · 찰밥까지 한국 밥맛 그대로",
+      "price": "$210.59",
+      "was": "$117.99",
+      "was_label": "작년 10월",
+      "strike": false,
+      "off_text": "최저보다 +$93",
+      "badge": "세일 대기",
+      "history": "작년 10/17에 $117.99 · 지금은 $93 더 비싸요"
+    },
+    {
+      "asin": "B00FLYWNYQ",
+      "img": "ai/item3.png",
+      "short": "인스턴트팟\n6쿼트",
+      "name": "인스턴트팟 듀오 6쿼트 7-in-1",
+      "who": "갈비찜 · 삼계탕 · 백숙을 압력으로 빠르게",
+      "price": "$79.00",
+      "was": "$64.99",
+      "was_label": "1년 최저",
+      "strike": false,
+      "off_text": "최저보다 +$14",
+      "badge": "세일 대기",
+      "history": "최근 1년 최저 $64.99 (작년 12월 · 올해 6월)"
+    },
+    {
+      "asin": "B000CBSNRY",
+      "img": "ai/item4.png",
+      "short": "마그나타일\n100피스",
+      "name": "마그나타일 클래식 100피스",
+      "who": "아이 크리스마스 선물 후보 1순위",
+      "price": "$109.04",
+      "was": "$83.99",
+      "was_label": "1년 최저",
+      "strike": false,
+      "off_text": "최저보다 +$25",
+      "badge": "세일 대기",
+      "history": "작년 11월 · 올해 8월에 $83.99까지 내려갔어요"
+    },
+    {
+      "asin": "B0764HS4SL",
+      "img": "ai/item5.png",
+      "short": "야채\n다지기",
+      "name": "풀스타 야채 다지기 · 채칼 올인원",
+      "who": "양파 · 마늘 · 파 다지기, 만두소 준비 끝",
+      "price": "$29.99",
+      "was": "$23.73",
+      "was_label": "1년 최저",
+      "strike": false,
+      "off_text": "최저보다 +$6",
+      "badge": "세일 대기",
+      "history": "1년간 $24~30 사이 · 최저 $23.73 (7월)"
+    }
+  ]
+}
