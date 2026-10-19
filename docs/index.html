@@ -44,6 +44,9 @@
   .card{display:flex;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:16px;
         padding:14px;text-decoration:none;color:inherit;transition:transform .1s}
   .card:active{transform:scale(.98)}
+  .card.has-pic{flex-direction:column;padding:0;overflow:hidden}
+  .card.has-pic .body{padding:12px 14px 14px}
+  .pic{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;background:var(--cream)}
   .emo{flex:none;width:56px;height:56px;border-radius:14px;background:var(--cream);display:flex;
        align-items:center;justify-content:center;font-size:30px}
   .body{flex:1;min-width:0}
@@ -95,27 +98,28 @@
    1) TAG 에 본인 Amazon Associates 트래킹 ID 입력
    2) DEALS 에 딜 추가/삭제 — 위에 있을수록 페이지 상단에 표시
       ends 날짜가 지나면 자동으로 숨겨져요 (YYYY-MM-DD, 비우면 계속 표시)
+   3) img: 우리 슬라이드에서 자른 이미지 (img/deal-<ASIN>.jpg, 3:2). 아마존 상품 사진은 사용 금지. 비우면 이모지 표시
    ========================================================= */
 const TAG = "migookkkultem-20";
 
 const DEALS = [
-  { asin:"B0BRYCXRPG", emoji:"💊", cat:"건강",
+  { asin:"B0BRYCXRPG", img:"img/deal-B0BRYCXRPG.jpg", emoji:"💊", cat:"건강",
     name:"Physician's CHOICE 유산균 60B CFU 84캡슐",
     note:"약 3개월분 · 최근 1년 최저가 (평소 $45~50)",
     price:"$34.97", was:"$49.97", asof:"10/16 오후", badge:"핫딜", ends:"" },
-  { asin:"B0GVL6RB6Z", emoji:"🥟", cat:"주방",
+  { asin:"B0GVL6RB6Z", img:"img/deal-B0GVL6RB6Z.jpg", emoji:"🥟", cat:"주방",
     name:"닌자 푸드프로세서 + 반죽기 9컵 (BZ601)",
     note:"만두소·김치 양념·반죽 · 가격 추적 5개월 중 최저가",
     price:"$99.99", was:"$118.74", asof:"10/16 오후", badge:"최저가", ends:"" },
-  { asin:"B0C4M2D1J2", emoji:"🍲", cat:"주방",
+  { asin:"B0C4M2D1J2", img:"img/deal-B0C4M2D1J2.jpg", emoji:"🍲", cat:"주방",
     name:"크록팟 7쿼트 슬로우쿠커 (수비드)",
     note:"갈비찜·수육 · 역대 최저 $99.98에 근접",
     price:"$104.32", was:"$138.13", asof:"10/16 오후", badge:"최저가 근접", ends:"" },
-  { asin:"B0BZHG5VQL", emoji:"🍳", cat:"정착템",
+  { asin:"B0BZHG5VQL", img:"img/deal-B0BZHG5VQL.jpg", emoji:"🍳", cat:"정착템",
     name:"센사르테 세라믹 냄비·팬 13종 세트",
     note:"미국 첫 살림 · 역대 최저 $62.65에 근접",
     price:"$65.94", was:"$77.99", asof:"10/16 오후", badge:"최저가 근접", ends:"" },
-  { asin:"B091FXQQMQ", emoji:"🔌", cat:"생활",
+  { asin:"B091FXQQMQ", img:"img/deal-B091FXQQMQ.jpg", emoji:"🔌", cat:"생활",
     name:"카사 스마트플러그 미니 2개입",
     note:"가습기·조명 앱으로 켜고 끄기 · 평균 $16.58",
     price:"$13.95", was:"$16.58", asof:"10/16 오후", badge:"꿀템", ends:"" },
@@ -140,8 +144,9 @@ function renderChips(){
 function renderList(){
   const items = DEALS.filter(live).filter(d => current === "전체" || d.cat === current);
   document.getElementById("list").innerHTML = items.length ? items.map(d => `
-    <a class="card" href="${link(d)}" target="_blank" rel="sponsored noopener">
-      <div class="emo">${esc(d.emoji)}</div>
+    <a class="card${d.img ? " has-pic" : ""}" href="${link(d)}" target="_blank" rel="sponsored noopener">
+      ${d.img ? `<img class="pic" src="${esc(d.img)}" alt="${esc(d.name)}" loading="lazy" width="720" height="480">`
+              : `<div class="emo">${esc(d.emoji)}</div>`}
       <div class="body">
         <div class="badges"><span class="${badgeClass(d.badge)}">${esc(d.badge)}</span><span class="badge">${esc(d.cat)}</span></div>
         <div class="name">${esc(d.name)}</div>
