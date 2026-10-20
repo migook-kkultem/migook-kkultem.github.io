@@ -1,0 +1,76 @@
+{
+ "slug": "2026-10-19-halloween",
+ "kicker": "가격 이력 직접 확인",
+ "title_html": "할로윈 <em>꿀템</em> 5",
+ "sub": "프라임이면 10/31 전에 도착해요",
+ "asof": "10/20 오전",
+ "hook_img": "../posts/2026-10-19-halloween/ai/hook.jpg",
+ "items": [
+  {
+   "asin": "B088CY6B1V",
+   "img": "../posts/2026-10-19-halloween/ai/item1.jpg",
+   "short": "해골\nLED 캔들",
+   "name": "해골·거미·까마귀 LED 캔들 3개",
+   "who": "6시간 타이머 · 불 없이 안전한 할로윈 무드",
+   "price": "$16.99",
+   "was": "$19.99",
+   "was_label": "평소",
+   "off": 15,
+   "badge": "최저가 근접",
+   "history": "1년 내내 $19~26 → 최근 1년 최저 수준"
+  },
+  {
+   "asin": "B0CXTZKZ1S",
+   "img": "../posts/2026-10-19-halloween/ai/item2.jpg",
+   "short": "할로윈 사탕\n195개",
+   "name": "M&M's·스니커즈 할로윈 펀사이즈 195개",
+   "who": "트릭오어트릿 준비 끝 · 개당 약 13¢",
+   "price": "$24.87",
+   "was": "$30~43",
+   "was_label": "올해 대부분",
+   "off_text": "작년 최저와 같아요",
+   "badge": "최저가 근접",
+   "history": "올해 대부분 $30~43 → 작년 할로윈 최저가와 같은 가격"
+  },
+  {
+   "asin": "B07VKYG68N",
+   "img": "../posts/2026-10-19-halloween/ai/item3.jpg",
+   "short": "창문 스티커\n10장",
+   "name": "할로윈 창문 스티커 10장 (146피스)",
+   "who": "아이랑 같이 붙였다 뗐다 · 창문 꾸미기",
+   "price": "$5.99",
+   "was": "$6.99",
+   "was_label": "평소",
+   "off": 14,
+   "badge": "최저가 근접",
+   "history": "1년 내내 $6.99 → 지금 $1 저렴"
+  },
+  {
+   "asin": "B003NT5KRI",
+   "img": "../posts/2026-10-19-halloween/ai/item4.jpg",
+   "short": "해골 문\n커버 5ft",
+   "name": "Beistle 해골 화장실 문 커버 5ft",
+   "who": "할로윈 파티 화장실 문에 붙이면 웃음 터져요",
+   "price": "$6.15",
+   "was": "$7.20",
+   "was_label": "평소",
+   "off": 15,
+   "badge": "최저가 근접",
+   "history": "평소 $7~8 · 리뷰 1.2만+ ⭐4.6"
+  },
+  {
+   "asin": "B00N1QPNMA",
+   "img": "../posts/2026-10-19-halloween/ai/item5.jpg",
+   "short": "야광봉\n100개",
+   "name": "파티스틱 야광봉 100개 + 연결고리",
+   "who": "트릭오어트릿 밤길 아이 안전 · 팔찌·목걸이로",
+   "price": "$8.99",
+   "was": "$7.99~9.99",
+   "was_label": "1년 범위",
+   "strike": false,
+   "off_text": "할인 아님 · 꿀템",
+   "badge": "꿀템",
+   "history": "1년 내내 비슷한 가격 · 리뷰 2.9만 ⭐4.6"
+  }
+ ]
+}
