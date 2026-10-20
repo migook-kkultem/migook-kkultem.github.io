@@ -2,13 +2,13 @@
 import json, os, sys, subprocess
 from playwright.sync_api import sync_playwright
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from carousel import BASE_CSS, esc
+from carousel import BASE_CSS, esc, off_txt
 
 HERE = os.path.dirname(os.path.abspath(__file__)); OUT = os.path.join(HERE, "out")
 
 def overlay_html(d):
     tiles = "".join(f"""<div class="tile"><div class="tn">{i+1}</div><div class="tname">{esc(it['short'])}</div>
-      <div class="tp">{esc(it['price'])}</div><div class="toff">-{it['off']}%</div></div>""" for i, it in enumerate(d["items"]))
+      <div class="tp">{esc(it['price'])}</div><div class="toff">{off_txt(it)}</div></div>""" for i, it in enumerate(d["items"]))
     return f"""<!doctype html><html><head><meta charset="utf-8"><style>{BASE_CSS}
     html,body{{width:1080px;height:1920px;background:transparent}}
     .shade{{position:absolute;left:0;right:0;top:0;height:640px;background:linear-gradient(180deg,rgba(20,33,61,.95),rgba(20,33,61,.75) 60%,rgba(20,33,61,0))}}
@@ -61,7 +61,7 @@ def shot(page, html_str, path, transparent=False):
     page.screenshot(path=path, omit_background=transparent)
 
 if __name__ == "__main__":
-    d = json.load(open(sys.argv[1], encoding="utf-8")); clip = sys.argv[2]; slug = d["slug"].replace("-deals", "-reel")
+    d = json.load(open(sys.argv[1], encoding="utf-8")); clip = sys.argv[2]; slug = d["slug"].replace("-deals", "-reel") if d["slug"].endswith("-deals") else d["slug"] + "-reel"
     ov, ec = os.path.join(OUT, slug + "-overlay.png"), os.path.join(OUT, slug + "-end.png")
     with sync_playwright() as p:
         b = p.chromium.launch(); pg = b.new_page(viewport={"width": 1080, "height": 1920})

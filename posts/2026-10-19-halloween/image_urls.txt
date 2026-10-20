@@ -1,0 +1,8 @@
+# Carousel: hook, 5 items, CTA (order matters)
+https://migook-kkultem.github.io/img/2026-10-19-halloween-01.jpg
+https://migook-kkultem.github.io/img/2026-10-19-halloween-02.jpg
+https://migook-kkultem.github.io/img/2026-10-19-halloween-03.jpg
+https://migook-kkultem.github.io/img/2026-10-19-halloween-04.jpg
+https://migook-kkultem.github.io/img/2026-10-19-halloween-05.jpg
+https://migook-kkultem.github.io/img/2026-10-19-halloween-06.jpg
+https://migook-kkultem.github.io/img/2026-10-19-halloween-07.jpg
