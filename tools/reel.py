@@ -18,15 +18,15 @@ def overlay_html(d):
     .kicker{{display:inline-block;font-size:40px;font-weight:900;color:var(--navy);background:var(--honey);padding:8px 26px;border-radius:16px;transform:rotate(-2deg)}}
     h1{{margin-top:14px;font-size:150px;font-weight:900;letter-spacing:-6px;line-height:1;text-shadow:0 6px 24px rgba(0,0,0,.45)}}
     h1 em{{font-style:normal;color:var(--honey)}}
-    .strip{{position:absolute;left:30px;right:150px;bottom:420px;display:grid;grid-template-columns:repeat({len(d['items'])},1fr);gap:12px}}
+    .strip{{position:absolute;left:110px;right:110px;bottom:420px;display:grid;grid-template-columns:repeat({len(d['items'])},1fr);gap:12px}}
     .tile{{background:var(--cream);color:var(--navy);border-radius:20px;padding:20px 8px 16px;text-align:center;position:relative}}
     .tn{{position:absolute;top:-18px;left:50%;transform:translateX(-50%);width:38px;height:38px;border-radius:50%;background:var(--navy);color:var(--honey);font-size:22px;font-weight:900;display:flex;align-items:center;justify-content:center;border:3px solid var(--honey)}}
     .tname{{white-space:pre-line;margin-top:10px;font-size:20px;font-weight:700;line-height:1.25;height:58px;display:flex;align-items:center;justify-content:center}}
     .tp{{margin-top:6px;font-size:32px;font-weight:900;color:var(--hot);letter-spacing:-1px}}
     .toff{{margin-top:6px;display:inline-block;font-size:22px;font-weight:900;background:var(--navy);color:var(--honey);border-radius:8px;padding:1px 10px}}
     .ai{{left:44px;bottom:660px}}
-    .foot{{position:absolute;left:30px;right:150px;bottom:350px;font-size:26px !important;text-align:center;font-size:30px;font-weight:700;color:#fff}}
-    .foot2{{position:absolute;left:30px;right:150px;bottom:318px;text-align:center;font-size:22px;color:var(--mute)}}
+    .foot{{position:absolute;left:60px;right:60px;bottom:350px;font-size:26px !important;text-align:center;font-size:30px;font-weight:700;color:#fff}}
+    .foot2{{position:absolute;left:60px;right:60px;bottom:318px;text-align:center;font-size:22px;color:var(--mute)}}
     </style></head><body>
     <div class="shade"></div><div class="shade2"></div>
     <div class="brand"><div class="dot"><small>MIGOOK</small><b>꿀템</b></div><span>미국꿀템</span></div>
