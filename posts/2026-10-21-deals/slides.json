@@ -1,0 +1,76 @@
+{
+  "slug": "2026-10-21-deals",
+  "kicker": "가격 이력 직접 확인",
+  "title_html": "오늘의 <em>꿀딜</em> 5",
+  "sub": "4개는 지금 사고, 1개는 블프까지 기다려요",
+  "asof": "10/21 오후",
+  "hook_img": "../posts/2026-10-21-deals/ai/hook.png",
+  "items": [
+    {
+      "asin": "B0B75Q388N",
+      "img": "../posts/2026-10-21-deals/ai/item1.png",
+      "short": "다이슨\n청소기",
+      "name": "다이슨 볼 애니멀 3 유선 청소기",
+      "who": "카펫 많은 미국 집 · 털 엉킴 방지 헤드",
+      "price": "$299.99",
+      "was": "$382",
+      "was_label": "평균",
+      "off": 21,
+      "badge": "최저가 근접",
+      "history": "역대 최저 $299 · 평균보다 $82 저렴"
+    },
+    {
+      "asin": "B0DJ19Z5KM",
+      "img": "../posts/2026-10-21-deals/ai/item2.png",
+      "short": "레고\n음식친구",
+      "name": "레고 클래식 음식 친구들 (11039)",
+      "who": "4살+ 소꿉놀이 · 생일 선물·스타킹 선물로",
+      "price": "$6.29",
+      "was": "$9.83",
+      "was_label": "평균",
+      "off": 36,
+      "badge": "최저가",
+      "history": "역대 최저가와 같은 가격 (평소 $9.99)"
+    },
+    {
+      "asin": "B0D71BKD7Q",
+      "img": "../posts/2026-10-21-deals/ai/item3.png",
+      "short": "다이슨\n드라이어",
+      "name": "다이슨 슈퍼소닉 뉴럴 드라이어",
+      "who": "스트로베리 브론즈 · 선물 케이스 포함 · 연말 선물로",
+      "price": "$372.49",
+      "was": "$478",
+      "was_label": "평균",
+      "off": 22,
+      "badge": "꿀템",
+      "history": "평균보다 $106 저렴 · 역대 최저는 $349.99"
+    },
+    {
+      "asin": "B0CNTRVZPW",
+      "img": "../posts/2026-10-21-deals/ai/item4.png",
+      "short": "워터픽\n무선",
+      "name": "워터픽 무선 구강세정기 Pulse 3100",
+      "who": "충전식 무선 · 세면대 옆에 두고 온 가족이",
+      "price": "$34.95",
+      "was": "$42.96",
+      "was_label": "평균",
+      "off": 19,
+      "badge": "꿀템",
+      "history": "평균보다 $8 저렴 · 작년 블프 최저 $29.99"
+    },
+    {
+      "asin": "B0FQFB8FMG",
+      "img": "../posts/2026-10-21-deals/ai/item5.png",
+      "short": "에어팟\n프로3",
+      "name": "애플 에어팟 프로 3",
+      "who": "지금 사지 말고 블프 때 다시 체크하세요",
+      "price": "$199",
+      "was": "$169",
+      "was_label": "올해 최저",
+      "strike": false,
+      "off_text": "블프 대기",
+      "badge": "세일 대기",
+      "history": "평균 $208 · 6월에 $169까지 내려갔어요"
+    }
+  ]
+}
