@@ -1,0 +1,52 @@
+{
+  "slug": "2026-10-27-owala-reel",
+  "asof": "10/27 오전",
+  "asin": "B0HBB7C72L",
+  "segments": [
+    {
+      "src": ".work/ai/owala-smoothsip.png",
+      "dur": 3.0,
+      "z0": 1.0,
+      "z1": 1.04,
+      "kicker": "8월 가격 추적 이후 첫 할인",
+      "title": "출근길 커피,\n새지 않는 텀블러",
+      "pos": "top"
+    },
+    {
+      "src": ".work/ai/owala-smoothsip.png",
+      "dur": 3.0,
+      "fx": 0.5,
+      "fy": 0.37,
+      "z0": 1.55,
+      "z1": 1.65,
+      "title": "밀어서 열고 닫는 슬라이드 뚜껑",
+      "sub": "밀폐 뚜껑 · 뚜껑은 식세기 OK (제조사 기준)",
+      "pos": "band",
+      "y": 330
+    },
+    {
+      "src": ".work/ai/owala-smoothsip.png",
+      "dur": 2.5,
+      "fx": 0.5,
+      "fy": 0.55,
+      "z0": 1.1,
+      "z1": 1.14,
+      "title": "보냉 24시간 · 보온 6시간",
+      "sub": "이중 단열 스테인리스 · 20oz (제조사 기준)",
+      "pos": "band",
+      "y": 1440
+    }
+  ],
+  "end": {
+    "dur": 4.0,
+    "badge": "최저가",
+    "name": "Owala SmoothSip 20oz 텀블러",
+    "price": "$23.99",
+    "history": "평소 $29.99 → 8월 추적 이후 첫 할인 -20%",
+    "rating": "★ 4.6  (리뷰 15,766개)",
+    "review": "후기 요약: 보온·보냉 잘 되고 안 새며, 분해 세척이 쉽다는 평이 많아요",
+    "con": "아쉬운 점: 칠이 까져서 왔다는 후기, 뚜껑이 뻑뻑하다는 후기도",
+    "cta": "링크는 프로필에 있어요",
+    "save": "Desert Smoke 색상 기준 · 색상마다 가격이 달라요"
+  }
+}

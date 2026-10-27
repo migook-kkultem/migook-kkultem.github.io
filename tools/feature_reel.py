@@ -122,8 +122,11 @@ if __name__ == "__main__":
         if src.lower().endswith((".png", ".jpg", ".jpeg")):
             n = int(dur * FPS)
             vin = ["-loop", "1", "-i", src]
+            # optional focus for stills: fx/fy = point to center on (0-1), z0->z1 = zoom over the segment
+            fx, fy = seg.get("fx", 0.5), seg.get("fy", 0.5); z0, z1 = seg.get("z0", 1.0), seg.get("z1", 1.04)
             base = (f"[0:v]scale=2160:3840:force_original_aspect_ratio=increase,crop=2160:3840,"
-                    f"zoompan=z='1.0+0.04*on/{n}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={n}:s={W}x{H}:fps={FPS}")
+                    f"zoompan=z='{z0}+({z1}-{z0})*on/{n}':x='max(0,min(iw-iw/zoom,{fx}*iw-iw/zoom/2))':"
+                    f"y='max(0,min(ih-ih/zoom,{fy}*ih-ih/zoom/2))':d={n}:s={W}x{H}:fps={FPS}")
         else:
             vin = ["-ss", str(seg.get("start", 0)), "-t", str(dur), "-i", src]
             base = (f"[0:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
