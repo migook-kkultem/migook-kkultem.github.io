@@ -1,0 +1,5 @@
+file '/sessions/rcw-016uuy89gztbs2vwsrbunjwv/mnt/미굴꿀템/posts/2026-10-26-bedbot-reel/build/part0.mp4'
+file '/sessions/rcw-016uuy89gztbs2vwsrbunjwv/mnt/미굴꿀템/posts/2026-10-26-bedbot-reel/build/part1.mp4'
+file '/sessions/rcw-016uuy89gztbs2vwsrbunjwv/mnt/미굴꿀템/posts/2026-10-26-bedbot-reel/build/part2.mp4'
+file '/sessions/rcw-016uuy89gztbs2vwsrbunjwv/mnt/미굴꿀템/posts/2026-10-26-bedbot-reel/build/part3.mp4'
+file '/sessions/rcw-016uuy89gztbs2vwsrbunjwv/mnt/미굴꿀템/posts/2026-10-26-bedbot-reel/build/partend.mp4'

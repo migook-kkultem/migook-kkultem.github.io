@@ -1,0 +1,54 @@
+{
+  "slug": "2026-10-26-bedbot-reel",
+  "asof": "10/26 밤",
+  "asin": "B0G62N6Q8F",
+  "segments": [
+    {
+      "src": ".work/ai/bedbot/c1-glide.mp4",
+      "start": 0.0,
+      "dur": 3.0,
+      "kicker": "자동 침구 청소 로봇",
+      "title": "침대 청소,\n아직 손으로 하세요?",
+      "pos": "top"
+    },
+    {
+      "src": ".work/ai/bedbot/c2-edge.mp4",
+      "start": 0.0,
+      "dur": 4.0,
+      "title": "버튼 한 번 → 침대 전체 알아서",
+      "sub": "센서 9개로 가장자리 감지 · 낙하 방지",
+      "pos": "band",
+      "y": 860
+    },
+    {
+      "src": ".work/ai/bedbot/c1-glide.mp4",
+      "start": 3.0,
+      "dur": 2.0,
+      "zoom": 1.1,
+      "title": "두드리고 + 흡입 + UV-C",
+      "sub": "분당 15,000회 · 14AW 흡입 (제조사 기준)",
+      "pos": "band",
+      "y": 330
+    },
+    {
+      "src": ".work/ai/bedbot/s3-kid.png",
+      "dur": 2.5,
+      "title": "아이 침대 · 반려동물 털까지",
+      "sub": "엉킴 방지 브러시 · HEPA 필터",
+      "pos": "band",
+      "y": 1050
+    }
+  ],
+  "end": {
+    "dur": 4.0,
+    "badge": "세일 대기",
+    "name": "CREATULIZE X1 침구 청소 로봇",
+    "price": "$219.99",
+    "history": "7월 최저 약 $187 · 지금은 평소 가격",
+    "rating": "★ 4.3  (리뷰 85개)",
+    "review": "후기 요약: 먼지가 생각보다 많이 나와 놀랐다는 평이 많아요",
+    "con": "아쉬운 점: 배터리 약 1시간이라는 후기",
+    "cta": "링크는 프로필에 있어요",
+    "save": "블프에 가격 떨어지면 스토리로 알려드려요"
+  }
+}
