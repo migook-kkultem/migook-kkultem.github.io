@@ -1,0 +1,68 @@
+{
+  "slug": "2026-10-28-marshall-reel",
+  "asof": "10/28 오전",
+  "intro": {
+    "dur": 1.6,
+    "kicker": "가격 이력 직접 확인",
+    "title": "마샬 4종 할인\n3개는 1년 최저가"
+  },
+  "items": [
+    {
+      "src": ".work/ai/marshall-1.jpg",
+      "badge": "최근 1년 최저가",
+      "name": "마샬 Monitor III ANC",
+      "short": "Monitor III ANC 헤드폰",
+      "sub": "노이즈캔슬링 무선 헤드폰",
+      "reason": "노캔 켜고 70시간 재생 (제조사 기준)",
+      "price": "$199.99",
+      "ref": "평소 $250~280",
+      "history": "1년 최저가 갱신 · 이전 최저 약 $230",
+      "rating": "★ 4.5 (리뷰 899개)",
+      "dur": 3.0
+    },
+    {
+      "src": ".work/ai/marshall-2.jpg",
+      "badge": "최근 1년 최저가",
+      "name": "마샬 Motif II ANC",
+      "short": "Motif II ANC 이어버드",
+      "sub": "노이즈캔슬링 무선 이어버드",
+      "reason": "노캔 + 주변음 모드 · 케이스 포함 30시간 (제조사 기준)",
+      "price": "$129.99",
+      "ref": "평소 약 $170",
+      "history": "1년 최저가 갱신 · 이전 최저 약 $140",
+      "rating": "★ 4.2 (리뷰 2,230개)",
+      "dur": 3.0
+    },
+    {
+      "src": ".work/ai/marshall-3.jpg",
+      "badge": "1년 최저가와 같은 가격",
+      "name": "마샬 Major V",
+      "short": "Major V 헤드폰",
+      "sub": "온이어 무선 헤드폰",
+      "reason": "한 번 충전 100시간+ · 무선충전 (제조사 기준)",
+      "price": "$89.99",
+      "ref": "평소 $129.99",
+      "history": "1년 최저가와 같은 가격 · 종종 오는 가격이에요",
+      "rating": "★ 4.6 (리뷰 4,787개)",
+      "dur": 3.0
+    },
+    {
+      "src": ".work/ai/marshall-4.jpg",
+      "badge": "꿀템",
+      "name": "마샬 Middleton II",
+      "short": "Middleton II 스피커",
+      "sub": "방수 블루투스 스피커",
+      "reason": "IP67 방수 · 30시간+ · 폰 충전 가능 (제조사 기준)",
+      "price": "$279.99",
+      "ref": "평소 $329.99",
+      "history": "최저가는 아니에요 · 9월엔 약 $230까지 내려갔어요",
+      "rating": "★ 4.1 (리뷰 305개)",
+      "dur": 3.0
+    }
+  ],
+  "end": {
+    "dur": 3.5,
+    "title": "마샬 할인 4종",
+    "cta": "링크는 프로필에 있어요"
+  }
+}
